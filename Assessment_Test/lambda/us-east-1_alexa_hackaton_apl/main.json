@@ -1,0 +1,153 @@
+{
+    "type": "APL",
+    "version": "1.0",
+    "theme": "dark",
+    "import": [],
+    "resources": [
+        {
+            "description": "Colors dark to light",
+            "colors": {
+                "myBlack": "#343838",
+                "myPurple": "#9C0A54",
+                "myRed": "#FC2D47",
+                "myOrange": "#FD704B",
+                "myYellow": "#FDB04F",
+                "myWhite": "#FFFFFF"
+            }
+        }
+    ],
+    "styles": {},
+    "layouts": {
+        "HomePageButton": {
+            "parameters": [
+                "title",
+                "colorPrimary",
+                "colorSecondary"
+            ],
+            "items": [
+                {
+                    "type": "TouchWrapper",
+                    "width": "40vw",
+                    "height": "20vh",
+                    "item": {
+                        "type": "Container",
+                        "width": "30vw",
+                        "height": "15vh",
+                        "items": [
+                            {
+                                "type": "Frame",
+                                "width": "30vw",
+                                "height": "15vh",
+                                "backgroundColor": "${colorSecondary}",
+                                "position": "absolute"
+                            },
+                            {
+                                "type": "Frame",
+                                "width": "30vw",
+                                "height": "15vh",
+                                "backgroundColor": "${colorPrimary}",
+                                "position": "absolute"
+                            },
+                            {
+                                "type": "Text",
+                                "text": "${title}",
+                                "color": "@myWhite",
+                                "fontWeight": "900",
+                                "fontSize": "3vw",
+                                "width": "30vw",
+                                "height": "15vh",
+                                "textAlign": "center",
+                                "textAlignVertical": "center"
+                            }
+                        ]
+                    },
+                    "onPress": {
+                        "type": "SendEvent",
+                        "arguments": [
+                            
+                            "${title}"
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "items": [
+            {
+                "type": "Container",
+                "width": "100vw",
+                "height": "100vh",
+                "items": [
+                    {
+                        "type": "Frame",
+                        "width": "100vw",
+                        "height": "100vh",
+                        "backgroundColor": "@myBlack",
+                        "position": "absolute"
+                    },
+                    {
+                        "when": "${viewport.shape == 'round'}",
+                        "type": "Container",
+                        "width": "100vw",
+                        "height": "100vh",
+                        "items": [
+                            {
+                                "type": "Text",
+                                "text": "Welcome To Assessment Test",
+                                "color": "@myWhite",
+                                "fontWeight": "900",    
+                                "width": "100vw",
+                                "fontSize": "8vh",
+                                "paddingTop": "35vh",
+                                "textAlign": "center"
+                            },
+                            {
+                                "type": "HomePageButton",
+                                "title": "lets begin",
+                                "colorPrimary": "@myOrange",
+                                "colorSecondary": "@myRed",
+                                "position": "absolute",
+                                "top": "50vh",
+                                "left": "35vw"
+                            }
+                        ]
+                    },
+                    {
+                        "when": "${viewport.shape != 'round'}",
+                        "type": "Container",
+                        "width": "100vw",
+                        "height": "100vh",
+                        
+                        "items": [
+                            {
+                                "type": "Text",
+                                "id": "ques",
+                                "text": "Welcome to Assessment Test",
+                                "color": "@myWhite",
+                                "fontWeight": "500",    
+                                "width": "50vw",
+                                "height": "100vh",
+                                "fontSize": "10vh",
+                                "paddingLeft": "5vw",
+                                "textAlignVertical": "center"
+                            },
+                            {
+                                "type": "HomePageButton",
+                                "title": "lets begin",
+                                "colorPrimary": "@myOrange",
+                                "colorSecondary": "@myRed",
+                                "position": "absolute",
+                                "top": "45vh",
+                                "right": "1vw"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,84 @@
+{
+  "manifest": {
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "alexa_hackaton_apl",
+          "sourceDir": "lambda\\us-east-1_alexa_hackaton_apl"
+        },
+        "interfaces": [
+          {
+            "type": "ALEXA_PRESENTATION_APL",
+            "supportedViewports": [
+              {
+                "mode": "HUB",
+                "shape": "ROUND",
+                "minWidth": 480,
+                "maxWidth": 480,
+                "minHeight": 480,
+                "maxHeight": 480
+              },
+              {
+                "mode": "HUB",
+                "shape": "RECTANGLE",
+                "minWidth": 1024,
+                "maxWidth": 1024,
+                "minHeight": 600,
+                "maxHeight": 600
+              },
+              {
+                "mode": "HUB",
+                "shape": "RECTANGLE",
+                "minWidth": 1280,
+                "maxWidth": 1280,
+                "minHeight": 800,
+                "maxHeight": 800
+              },
+              {
+                "mode": "TV",
+                "shape": "RECTANGLE",
+                "minWidth": 960,
+                "maxWidth": 960,
+                "minHeight": 540,
+                "maxHeight": 540
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "manifestVersion": "1.0",
+    "privacyAndCompliance": {
+      "locales": {
+        "en-US": {
+          "privacyPolicyUrl": "http://www.sixthblock.com/privacy-policy.html",
+          "termsOfUseUrl": "http://www.sixthblock.com/terms-and-conditions.html"
+        }
+      },
+      "allowsPurchases": false,
+      "usesPersonalInfo": false,
+      "isChildDirected": false,
+      "isExportCompliant": true,
+      "containsAds": false
+    },
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "name": "Assessment Test",
+          "smallIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/3294/fcdedf2407504eebb7aa0c367427320e/APP_ICON?versionId=4umMOWnLOxsZ2UmrWisn5NyAUZVR2YbT&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20190722T200841Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Credential=AKIAJFEYRBGIHK2BBYKA%2F20190722%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=8cef847878b476e5895589fa68727c37a6d02089c12bdfd95eb8142342f32c32",
+          "largeIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/1ab5/fafa876ece244efdae7ce077bb507022/APP_ICON_LARGE?versionId=8SDLhfLbNk5LgBek5mxs4.S4zsfzGIpR&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20190722T200841Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Credential=AKIAJFEYRBGIHK2BBYKA%2F20190722%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=ea10d0c81083d6b52ccbff8ebacc07374a81144a739467d0cf36ec39622b736d",
+          "summary": "Assessment Test",
+          "description": "Assessment Test",
+          "examplePhrases": [
+            "Alexa, open assessment test"
+          ],
+          "keywords": []
+        }
+      },
+      "isAvailableWorldwide": true,
+      "testingInstructions": "no special instructions",
+      "category": "EDUCATION_AND_REFERENCE",
+      "distributionCountries": []
+    }
+  }
+}

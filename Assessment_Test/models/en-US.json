@@ -1,0 +1,107 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "assessment test",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "PlayGameIntent",
+          "slots": [
+            {
+              "name": "answer",
+              "type": "answer"
+            }
+          ],
+          "samples": [
+            "my answer is {answer}",
+            "{answer}",
+            "lets begin"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "4"
+              }
+            },
+            {
+              "name": {
+                "value": "3"
+              }
+            },
+            {
+              "name": {
+                "value": "2"
+              }
+            },
+            {
+              "name": {
+                "value": "1"
+              }
+            },
+            {
+              "name": {
+                "value": "Amazon SimpleDB"
+              }
+            },
+            {
+              "name": {
+                "value": "Amazon Cloudfront"
+              }
+            },
+            {
+              "name": {
+                "value": "Amazon RDS"
+              }
+            },
+            {
+              "name": {
+                "value": "Amazon Simple Queue Service"
+              }
+            },
+            {
+              "name": {
+                "value": "Amazon Simple Storage System"
+              }
+            },
+            {
+              "name": {
+                "value": "CloudWatch"
+              }
+            },
+            {
+              "name": {
+                "value": "Multi-Factor Authentication"
+              }
+            },
+            {
+              "name": {
+                "value": "Amazon Elastic MapReduce"
+              }
+            }
+          ],
+          "name": "answer"
+        }
+      ]
+    }
+  },
+  "version": "2"
+}

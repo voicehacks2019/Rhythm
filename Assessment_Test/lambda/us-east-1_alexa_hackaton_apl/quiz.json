@@ -1,0 +1,212 @@
+{
+    "type": "APL",
+    "version": "1.0",
+    "theme": "dark",
+    "import": [
+        {
+            "name": "alexa-viewport-profiles",
+            "version": "1.0.0"
+        }
+    ],
+    "resources": [
+    
+        {
+            "when": "${@viewportProfile == @hubLandscapeMedium || @viewportProfile == @hubLandscapeLarge || @viewportProfile == @tvLandscapeXLarge}",
+            "description": "Font sizes",
+            "dimensions": {
+                "questionFontSize": "3vw"
+            }
+        },
+        {
+            "when": "${@viewportProfile == @hubRoundSmall}",
+            "description": "Font sizes",
+            "dimensions": {
+                "questionFontSize": "8vw"
+            }
+        }
+    ],
+    "styles": {
+        "questionStyle": {
+            "values": [
+                {
+                    "textAlign": "center",
+                    "color": "#FFFFFF",
+                    "fontSize": "@questionFontSize"
+                }
+            ]
+        }
+    },
+    "layouts": {},
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "items": [
+            {
+                "type": "Container",
+                "width": "100vw",
+                "height": "100vh",
+                "direction": "column",
+                "items": [
+                    {
+                        "when": "${@viewportProfile == @hubRoundSmall}",
+						"type": "Frame",
+                        "width": "100vw",
+                        "backgroundColor": "rgba(0,0,0,0.5)",
+                        "items": [
+                            {
+                                "type": "Frame",
+                                "width": "100vw",
+                                "backgroundColor": "rgba(0,0,0,0.5)",
+                                "item": {
+                                        "type": "Text",
+                                        "text": "${payload.riddleGameData.properties.currentQuestionText}",
+                                        "paddingTop": "20vh",
+                                        "paddingLeft": "5vw",
+                                        "paddingRight": "5vw",
+                                        "paddingBottom": "10vh",
+                                        "style": "questionStyle"  
+                                }
+                            },
+                            {
+                                "type": "Sequence",
+                                "data": "${payload.riddleGameData.properties.currentHint}",
+                                "width": "100vw",
+                                "height": "100vh",
+                                "paddingTop": "1vh",
+                                "paddingBottom": "5vh",
+                                "paddingLeft": "35vh",
+                                "numbered": true,
+                                "item": {
+										"type": "TouchWrapper",
+										"componentId": "touchId",
+										"width": "100vw",
+										"height": "20vh",
+										"paddingBottom": "1vh",
+										"item": {
+											"type": "Container",
+											"width": "30vw",
+											"height": "15vh",
+									"items": [
+										{
+											"type": "Frame",
+											"width": "30vw",
+											"height": "15vh",
+											"backgroundColor": "#FC2D47",
+											"position": "absolute"
+										},
+										{
+											"type": "Frame",
+											"width": "30vw",
+											"height": "15vh",
+											"backgroundColor": "#FD704B",
+											"position": "absolute"
+										},
+										{
+											"type": "Text",
+											"text": "${ordinal}.${data}",
+											"color": "#FFFFFF",
+											"fontWeight": "900",
+											"fontSize": "3vw",
+											"width": "30vw",
+											"height": "15vh",
+											"textAlign": "center",
+											"textAlignVertical": "center"
+										}
+									]
+										},
+										"onPress": {
+											"type": "SendEvent",
+											"arguments": [
+												"${data}"
+											]
+										}
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "when": "${@viewportProfile == @hubLandscapeMedium || @viewportProfile == @hubLandscapeLarge || @viewportProfile == @tvLandscapeXLarge}",
+                        "type": "Frame",
+                        "backgroundColor": "rgba(0,0,0,0.5)",
+                        "item": {
+                            "type": "Text",
+                            "text": "${payload.riddleGameData.properties.currentQuestionText}",
+                            "paddingTop": "15vh",
+                            "paddingBottom": "3vh",
+                            "paddingLeft": "3vw",
+                            "paddingRight": "3vw",
+                            "style": "questionStyle"
+                        }
+                    },
+                    {
+                        "when": "${@viewportProfile == @hubLandscapeMedium || @viewportProfile == @hubLandscapeLarge || @viewportProfile == @tvLandscapeXLarge}",
+                        "type": "Sequence",
+                        "data": "${payload.riddleGameData.properties.currentHint}",
+                        "height": "65vh",
+                        "numbered": true,
+                        "paddingTop": "5vh",
+                        "paddingBottom": "8vh",
+                        "paddingLeft": "35vw",
+                        "paddingRight": "3vw",
+                        "item": {
+                            "type": "TouchWrapper",
+                            "componentId": "touchId",
+                            "height": "16vh",
+                            "paddingBottom": "1vh",
+                            "item": {
+                                "type": "Container",
+                                "width": "30vw",
+                                "height": "15vh",
+                        "items": [
+                            {
+                                "type": "Frame",
+                                "width": "30vw",
+                                "height": "15vh",
+                                "backgroundColor": "#FC2D47",
+                                "position": "absolute"
+                            },
+                            {
+                                "type": "Frame",
+                                "width": "30vw",
+                                "height": "15vh",
+                                "backgroundColor": "#FD704B",
+                                "position": "absolute"
+                            },
+                            {
+                                "type": "Text",
+                                "text": "${ordinal}.${data}",
+                                "color": "#FFFFFF",
+                                "fontWeight": "900",
+                                "fontSize": "3vw",
+                                "width": "30vw",
+                                "height": "15vh",
+                                "textAlign": "center",
+                                "textAlignVertical": "center"
+                            }
+                        ]
+                            },
+                            "onPress": {
+                                "type": "SendEvent",
+                                "arguments": [
+                                    "${data}"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "when": "${@viewportProfile == @hubLandscapeMedium || @viewportProfile == @hubLandscapeLarge || @viewportProfile == @tvLandscapeXLarge}",
+                        "type": "Frame",
+                        "backgroundColor": "rgba(0,0,0,0.5)",
+                        "item": {
+                            "type": "Text",
+                            "text": "Touch the option or Say 'Alexa {your option}'",
+                            "paddingRight": "25vw",
+                            "style": "questionStyle"
+							}
+						 }
+                ]
+            }
+        ]
+    }
+}

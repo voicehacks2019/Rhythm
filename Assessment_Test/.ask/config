@@ -1,0 +1,33 @@
+{
+  "deploy_settings": {
+    "default": {
+      "skill_id": "amzn1.ask.skill.5b35d146-1f2f-4d0a-a8d4-03835ea5beb5",
+      "was_cloned": true,
+      "merge": {},
+      "resources": {
+        "manifest": {
+          "eTag": "a0a2d1b205f5eddb823f0faf555fb83e"
+        },
+        "interactionModel": {
+          "en-US": {
+            "eTag": "7931864fdb957af510ce45d86bc3087b"
+          }
+        },
+        "lambda": [
+          {
+            "arn": "arn:aws:lambda:us-east-1:375435848368:function:alexa_hackaton_apl",
+            "awsRegion": "us-east-1",
+            "functionName": "alexa_hackaton_apl",
+            "alexaUsage": [
+              "custom/default"
+            ],
+            "revisionId": "8eb5b1df-e76d-4a29-ac1e-e01460f37892",
+            "codeUri": "lambda/us-east-1_alexa_hackaton_apl",
+            "handler": "index.handler",
+            "runtime": "nodejs8.10"
+          }
+        ]
+      }
+    }
+  }
+}
